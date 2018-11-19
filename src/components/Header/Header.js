@@ -70,7 +70,7 @@ class Header extends React.Component {
       <Container>
         <Row className='logo'>
           <Col xs='12' sm='12' md='12' lg='12'>
-            <embed src={logo} alt='logo' style={{ width: "10%", height: "auto", paddingTop: "24px" }} />
+            <h1>WhatDothLife</h1>
           </Col>
         </Row>
       </Container>
