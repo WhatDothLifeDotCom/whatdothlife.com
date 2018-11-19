@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink as RRNavLink } from 'react-router-dom'
-import { Row, Col, Container, Nav, NavItem, NavLink, Navbar, NavbarToggler, Collapse} from 'reactstrap';
+import { Row, Col, Container, Nav, NavItem, NavLink, Navbar, NavbarBrand, NavbarToggler, Collapse} from 'reactstrap';
 import $ from 'jquery';
 
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -70,7 +70,7 @@ class Header extends React.Component {
       <Container>
         <Row className='logo'>
           <Col xs='12' sm='12' md='12' lg='12'>
-            <embed src={logo} alt='logo' style={{ width: "10%", height: "auto", paddingTop: "24px" }} />
+            <h1>WhatDothLife</h1>
           </Col>
         </Row>
       </Container>
@@ -80,47 +80,45 @@ class Header extends React.Component {
 
   renderBigNav() {
     return (
-      <div className='text-dark'>
-        <Container>
-            <Navbar className='navbig'>
-              <Nav>
-                <NavItem>
+            <Navbar className='nav'>
+            <NavbarBrand href="/" className="mr-auto">WhatDothLife</NavbarBrand>
+              <Nav className='mr-auto'>
+                <NavItem className='mr-auto'>
                   <NavLink activeClassName='active' tag={RRNavLink} exact to='/'>
                     <h3>Home</h3>
                   </NavLink>
                 </NavItem>
-                <NavItem>
+                <NavItem className='mr-auto'>
                   <NavLink activeClassName='active' tag={RRNavLink} exact to='/about'>
                     <h3>About</h3>
                   </NavLink>
                 </NavItem>
-                <NavItem>
+                <NavItem className='mr-auto'>
                   <NavLink activeClassName='active' tag={RRNavLink} exact to='/releases'>
                     <h3>Releases</h3>
                   </NavLink>
                 </NavItem>
-                <NavItem>
+                <NavItem className='mr-auto'>
                   <NavLink activeClassName='active' tag={RRNavLink} exact to='/video'>
                     <h3>Video</h3>
                   </NavLink>
                 </NavItem>
-                <NavItem>
+                <NavItem className='mr-auto'>
                   <NavLink activeClassName='active' tag={RRNavLink} exact to='/radio'>
                     <h3>Radio</h3>
                   </NavLink>
                 </NavItem>
               </Nav>
             </Navbar>
-          </Container>
-      </div>
     );
   } 
 
   renderMobileNav() {
     return(
-      <Navbar>
-      <NavbarToggler onClick={this.toggleNavbar} className="mx-auto">
-        <FontAwesomeIcon style={{ width: "10%", height: "auto" }} icon="bars" />
+      <Navbar className='nav'>
+      <NavbarBrand href="/" className="mr-auto">WDL</NavbarBrand>
+      <NavbarToggler onClick={this.toggleNavbar} className="mr-2">
+         <FontAwesomeIcon icon="bars" /> 
       </NavbarToggler>
       <Collapse isOpen={!this.state.collapsed} navbar>
         <Nav>
@@ -171,7 +169,6 @@ class Header extends React.Component {
   render() {
     return(
       <div>
-        {this.renderLogo()}
         {this.renderMenu()}
       </div>
 

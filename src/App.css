@@ -1,17 +1,17 @@
 .App {
   margin: 0;
   padding: 0;
-  text-align: center;
 }
 
-.navbar-nav {
+/* .navbar-nav {
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-}
+} */
 
-.navbig {
-  border-bottom: 1px solid black
+.nav {
+  background: #cc5757;
+  
 }
 
 .nav-link {
